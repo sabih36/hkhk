@@ -92,7 +92,8 @@ function burstConfetti(count = 95) {
 function openMessage() {
   giftOverlay.classList.add('hidden');
   messageOverlay.classList.remove('hidden');
-  burstConfetti(150);
+  burstConfetti(180);
+  releaseBalloons(22);
   if (!musicPlaying) toggleMusic().catch(() => {});
   closeMessageButton.focus();
 }
@@ -121,4 +122,61 @@ document.addEventListener('keydown', (event) => {
 window.addEventListener('load', () => {
   burstConfetti(75);
   confettiTimer = window.setTimeout(() => burstConfetti(35), 900);
+});
+
+
+// Extra playful effects: floating balloons, wish button, and gift reactions.
+const balloonLayer = document.getElementById('balloonLayer');
+const wishButton = document.getElementById('wishButton');
+const wishToast = document.getElementById('wishToast');
+let toastTimeout = null;
+
+function releaseBalloons(count = 10) {
+  const palette = ['#ff8fba', '#c2a7ff', '#ffd36f', '#9eddf1', '#ffb5a6', '#f3a8d3'];
+  for (let i = 0; i < count; i++) {
+    const balloon = document.createElement('span');
+    balloon.className = 'party-balloon';
+    const color = palette[Math.floor(Math.random() * palette.length)];
+    balloon.style.left = `${Math.random() * 100}%`;
+    balloon.style.background = `radial-gradient(circle at 30% 25%, #ffffffaa, ${color} 45%, ${color})`;
+    balloon.style.setProperty('--balloon-color', color);
+    balloon.style.setProperty('--duration', `${7 + Math.random() * 7}s`);
+    balloon.style.setProperty('--sway', `${Math.random() * 90 - 45}px`);
+    balloon.style.animationDelay = `${Math.random() * 1.8}s`;
+    balloonLayer.appendChild(balloon);
+    window.setTimeout(() => balloon.remove(), 16000);
+  }
+}
+
+function showWish() {
+  const wishes = [
+    '✨ A little wish is on its way to you, Maria! ✨',
+    '💖 May your dreams bloom beautifully this year!',
+    '🌈 Sending you extra happiness and good vibes!',
+    '⭐ Keep shining, Maria. Your future is bright!',
+    '🧁 One more reason to smile today. You deserve it!'
+  ];
+  wishToast.textContent = wishes[Math.floor(Math.random() * wishes.length)];
+  wishToast.classList.add('show');
+  burstConfetti(45);
+  releaseBalloons(5);
+  window.clearTimeout(toastTimeout);
+  toastTimeout = window.setTimeout(() => wishToast.classList.remove('show'), 3200);
+}
+
+wishButton.addEventListener('click', showWish);
+popupGift.addEventListener('click', () => {
+  popupGift.classList.remove('gift-opened');
+  void popupGift.offsetWidth;
+  popupGift.classList.add('gift-opened');
+});
+openGiftButton.addEventListener('click', () => releaseBalloons(16));
+celebrateAgainButton.addEventListener('click', () => {
+  releaseBalloons(18);
+  burstConfetti(130);
+});
+
+// Start a few gentle balloons with the opening celebration.
+window.addEventListener('load', () => {
+  window.setTimeout(() => releaseBalloons(9), 350);
 });

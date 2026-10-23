@@ -3,7 +3,7 @@
 ## Files
 - `index.html` — page structure and birthday message
 - `style.css` — responsive pastel design and animations
-- `script.js` — gift reveal, confetti, and synthesized birthday melody
+- `script.js` — gift reveal, confetti, floating balloons, interactive wish button, and synthesized birthday melody
 - `birthday-scene.png` — optional generated artwork (included if available)
 
 ## Run it on your computer
@@ -33,4 +33,8 @@
 - Change colors, fonts, and layout in `style.css`.
 - The music is synthesized by `script.js`, so it works without a separate music file.
 
-The website is static and does not collect or send anyone's personal information.
+The website is static and does not collect or send anyone's personal information. Extra fun effects include floating balloons, a wish button with rotating messages, hover animations, and extra confetti bursts.
+
+
+## Fix for celebration effects
+The latest version places balloon and confetti layers above the popup backdrop and triggers a fresh balloon/confetti burst when the gift opens. Extract this updated ZIP into a new folder so the corrected `style.css` and `script.js` are used.
