@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffe8f1">
+  <title>For Maria 💗 — Happy Birthday!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="For Maria"><span>♥</span> For Maria</a>
+    <button class="music-toggle" id="musicToggle" type="button" aria-pressed="false">
+      <span class="music-note">♫</span><span id="musicLabel">Play birthday music</span><span id="musicIcon">▶</span>
+    </button>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero" aria-label="Birthday greeting">
+      <div class="hero-copy">
+        <p class="eyebrow">A little celebration, just for you</p>
+        <h1>Happy Birthday,<br><span>Maria</span> <span class="heart">♡</span></h1>
+        <p class="hero-subtitle">A special day for a truly special person.</p>
+        <div class="doodle">✦ &nbsp; make a wish &nbsp; ✦</div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="sparkle sparkle-a">✦</div><div class="sparkle sparkle-b">✧</div>
+        <div class="gift-illustration"><div class="gift-lid"><span class="bow">∞</span></div><div class="gift-box"><span>♡</span><span>♡</span><span>♡</span></div></div>
+        <div class="mini-cake"><div class="candle">✦</div><div class="icing"></div><div class="cake-base"></div></div>
+        <span class="floating-heart heart-a">♥</span><span class="floating-heart heart-b">♡</span>
+      </div>
+    </section>
+
+    <section class="feature-grid" aria-label="Birthday wishes">
+      <article class="feature-card"><span class="feature-icon">♡</span><h2>Special Messages</h2><p>A few words from the heart.</p></article>
+      <article class="feature-card"><span class="feature-icon">✿</span><h2>Sweet Memories</h2><p>Little moments worth keeping.</p></article>
+      <article class="feature-card"><span class="feature-icon">✦</span><h2>Big Dreams</h2><p>May beautiful things find you.</p></article>
+      <article class="feature-card"><span class="feature-icon">∞</span><h2>Always Here</h2><p>Cheering for you, always.</p></article>
+    </section>
+    <footer>Made with love for Maria <span>♡</span></footer>
+  </main>
+
+  <div class="overlay" id="giftOverlay" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+    <div class="popup-card">
+      <button class="close-button" id="closePopup" type="button" aria-label="Close birthday popup">×</button>
+      <div class="popup-gift" id="popupGift" aria-hidden="true"><div class="gift-top"><i></i></div><div class="gift-bottom"><span>♥</span><span>♥</span></div><div class="gift-glow"></div></div>
+      <p class="popup-kicker">A tiny surprise for you</p>
+      <h2 id="popupTitle">Surprise!</h2>
+      <p class="popup-lead">It’s your birthday, Maria! 🎉</p>
+      <p class="popup-hint">Tap the gift and open your special birthday message.</p>
+      <button class="primary-button" id="openGift" type="button"><span>♔</span> Open Gift <span class="arrow">→</span></button>
+      <div class="popup-sparkles" aria-hidden="true">✦　♡　✧　♡　✦</div>
+    </div>
+  </div>
+
+  <div class="message-overlay hidden" id="messageOverlay" role="dialog" aria-modal="true" aria-labelledby="messageTitle">
+    <article class="message-card">
+      <button class="close-button" id="closeMessage" type="button" aria-label="Close message">×</button>
+      <div class="message-flower">🌷</div>
+      <p class="popup-kicker">From someone who’s cheering for you</p>
+      <h2 id="messageTitle">Happy Birthday, Maria! <span>❤️</span></h2>
+      <div class="message-body">
+        <p>Happy birthday Maria❤️❤️❤️❤️.</p>
+        <p>Love to see you be happy and succeeding day by day. Wishing u a day of pure love, happiness and success.</p>
+        <p>Ye din itna hi special hoa jitna ap special ho. Always be happy. I am always there for u ❤️.</p>
+        <p>Allah hmesha apko success ki tarf leta jaye. AMEEN. ❤️❤️❤️.</p>
+      </div>
+      <p class="signature">With lots of love, <span>Your friend</span> 💗</p>
+      <button class="secondary-button" id="celebrateAgain" type="button">Celebrate again ✨</button>
+    </article>
+  </div>
+
+  <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>
